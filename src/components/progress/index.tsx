@@ -10,7 +10,7 @@ const Progress = ({ variant, label, withValue }: TProgress) => {
                 <div className={styles.lineBar}>
                     <div className={styles.lineProgress}></div>
                 </div>
-                <div className={styles.progressValue}>50%</div>
+                {withValue && <div className={styles.progressValue}>50%</div>}
             </div>
         </div>
     );
