@@ -1,11 +1,12 @@
-import React from 'react';
+import { Progress, Title } from "./components";
 
 function App() {
-  return (
-    <div className="App">
-      12321
-    </div>
-  );
+    return (
+        <>
+            <Title>Progress bars</Title>
+            <Progress variant="line" />
+        </>
+    );
 }
 
 export default App;

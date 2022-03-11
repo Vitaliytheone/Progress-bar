@@ -1,2 +1,3 @@
-export { default as CircleBar} from './circle-bar';
-export { default as LineBar} from './line-bar';
+export { default as Progress} from './progress';
+export { default as Title} from './title';
+
