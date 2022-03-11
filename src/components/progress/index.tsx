@@ -1,5 +1,5 @@
 import { TProgress } from "./type";
-import styles from "../../assets/styles.module.css";
+import styles from "./styles.module.css";
 
 const Progress = ({ variant, label, withValue }: TProgress) => {
     const isLine = variant === "line";
