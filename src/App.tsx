@@ -1,11 +1,14 @@
-import { Progress, Title, Control } from "./components";
+import { Progress, Control } from "./components";
+import styles from "./assets/styles.module.css";
 
 function App() {
     return (
         <>
-            <Title>Progress bars</Title>
-            <Progress variant="line" label="Line bar" />
-            <Progress variant="line" label="Circle bar" />
+            <div className={styles.title}>Progress bars</div>
+            <div className={styles.wrap}>
+                <Progress variant="line" label="Line bar" />
+                <Progress variant="line" label="Circle bar" />
+            </div>
             <Control />
         </>
     );

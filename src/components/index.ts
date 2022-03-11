@@ -1,5 +1,4 @@
 export { default as Progress} from './progress';
-export { default as Title} from './title';
 export { default as Control} from './control';
 
 

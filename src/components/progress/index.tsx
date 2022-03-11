@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 const Progress = ({ variant, label, withValue }: TProgress) => {
     const isLine = variant === "line";
     return (
-        <>
+        <div>
             <label className={styles.label}>{label}</label>
             <div className={styles.progressInfo}>
                 <div className={styles.lineBar}>
@@ -12,7 +12,7 @@ const Progress = ({ variant, label, withValue }: TProgress) => {
                 </div>
                 <div className={styles.progressValue}>50%</div>
             </div>
-        </>
+        </div>
     );
 };
 
