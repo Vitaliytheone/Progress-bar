@@ -1,4 +1,4 @@
-import { Progress, Title } from "./components";
+import { Progress, Title, Control } from "./components";
 
 function App() {
     return (
@@ -6,6 +6,7 @@ function App() {
             <Title>Progress bars</Title>
             <Progress variant="line" label="Line bar" />
             <Progress variant="line" label="Circle bar" />
+            <Control />
         </>
     );
 }

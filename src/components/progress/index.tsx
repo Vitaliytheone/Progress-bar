@@ -1,11 +1,18 @@
 import { TProgress } from "./type";
+import styles from "../../assets/styles.module.css";
 
-const Progress = ({ variant, label }: TProgress) => {
+const Progress = ({ variant, label, withValue }: TProgress) => {
+    const isLine = variant === "line";
     return (
-        <div>
-            <label>{label}</label>
-            <div>Progress</div>
-        </div>
+        <>
+            <label className={styles.label}>{label}</label>
+            <div className={styles.progressInfo}>
+                <div className={styles.lineBar}>
+                    <div className={styles.lineProgress}></div>
+                </div>
+                <div className={styles.progressValue}>50%</div>
+            </div>
+        </>
     );
 };
 
