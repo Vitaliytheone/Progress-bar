@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 
 const Progress = ({ variant, label, withValue, maxValue, value }: TProgress) => {
     const isLine = variant === "line";
-    const width = maxValue > value ? `${(value * 100) / maxValue}%` : 0;
+    const width = value <= maxValue ? `${(value * 100) / maxValue}%` : maxValue;
     return (
         <div>
             <label className={styles.label}>{label}</label>

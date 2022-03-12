@@ -5,8 +5,8 @@ import { data } from "./data";
 import { TBtn } from "./components/control/type";
 
 function App() {
-    const [value, setValue] = useState(50);
-    const [maxValue, setMaxValue] = useState(250);
+    const [value, setValue] = useState(0);
+    const [maxValue, setMaxValue] = useState(10);
     const [withValue, setWithValue] = useState(false);
 
     const onChangeWithValueParam = () => {
@@ -14,6 +14,9 @@ function App() {
     };
 
     const onClickBtn = (v: TBtn) => () => {
+        if (maxValue === value) {
+            return;
+        }
         setValue((prev) => (v === "incr" ? prev + 1 : prev === 0 ? 0 : prev - 1));
     };
 
