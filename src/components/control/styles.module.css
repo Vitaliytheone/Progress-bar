@@ -2,6 +2,10 @@
     margin-right: 4px;
 }
 
+.inputWrap {
+    display: inline-block;
+}
+
 .checkbox {
     composes: mr4;
     cursor: pointer;

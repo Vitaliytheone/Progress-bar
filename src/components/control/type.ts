@@ -1,6 +1,7 @@
 export type TBtn = 'incr' | 'decr';
 
 export type TControl = {
+    maxValue: number;
     value: number;
     withValue: boolean;
     onChangeCheckbox: () => void;

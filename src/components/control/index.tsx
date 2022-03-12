@@ -1,14 +1,21 @@
-import { memo } from "react";
 import styles from "./styles.module.css";
 import { TControl } from "./type";
 
-const Control = ({ value, withValue, onChangeCheckbox, onClick }: TControl) => {
+const Control = ({ value, maxValue, withValue, onChangeCheckbox, onClick }: TControl) => {
     return (
         <div>
-            <label htmlFor="input" className={styles.labelInput}>
-                Enter the value
-            </label>
-            <input id="input" className={styles.mr4} value={value} />
+            <div className={styles.inputWrap}>
+                <label htmlFor="input-max" className={styles.labelInput}>
+                    Max value
+                </label>
+                <input id="input-max" className={styles.mr4} value={maxValue} />
+            </div>
+            <div className={styles.inputWrap}>
+                <label htmlFor="input-current" className={styles.labelInput}>
+                    Enter the value
+                </label>
+                <input id="input-current" className={styles.mr4} value={value} />
+            </div>
             <button className={styles.button} onClick={onClick("decr")}>
                 -
             </button>
@@ -29,4 +36,4 @@ const Control = ({ value, withValue, onChangeCheckbox, onClick }: TControl) => {
     );
 };
 
-export default memo(Control);
+export default Control;
