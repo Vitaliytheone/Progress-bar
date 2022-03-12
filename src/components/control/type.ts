@@ -6,4 +6,5 @@ export type TControl = {
     withValue: boolean;
     onChangeCheckbox: () => void;
     onClick: (v: TBtn) => () => void;
+    onChange: (e: any) => void;
 }
