@@ -25,8 +25,9 @@ function App() {
 
     const onChangeValue = (e: any) => {
         const { value } = e.target;
+        // !str.match(/^-?[0-9]*[.][0-9]+$/)
+        setValue(value.replace(/^[0-9]*[.][0-9]+$/g, ""));
         console.info(value);
-        setValue(value);
     };
 
     return (
