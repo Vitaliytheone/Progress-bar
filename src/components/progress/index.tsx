@@ -8,7 +8,7 @@ const Progress = ({ variant, label, withValue, maxValue, value }: TProgress) => 
     return (
         <div>
             <label className={styles.label}>{label}</label>
-            <div className={styles.progressInfo}>
+            <div className={isLine && withValue ? styles.progressInfoValueLine : styles.progressInfo}>
                 <div className={styles.lineBar}>
                     <div className={styles.lineProgress} style={{ width }}></div>
                 </div>

@@ -22,8 +22,15 @@
 .progressInfo {
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+.progressInfoValueLine {
+    composes: progressInfo;
+    padding-right: 40px;
 }
 
 .progressValue {
-    margin-left: 12px;
+    position: absolute;
+    right: 0;
 }
