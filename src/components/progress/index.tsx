@@ -3,7 +3,8 @@ import styles from "./styles.module.css";
 
 const Progress = ({ variant, label, withValue, maxValue, value }: TProgress) => {
     const isLine = variant === "line";
-    const width = value <= maxValue ? `${(value * 100) / maxValue}%` : maxValue;
+    const valueInPercent = `${(value * 100) / maxValue}%`;
+    const width = value <= maxValue ? valueInPercent : maxValue;
     return (
         <div>
             <label className={styles.label}>{label}</label>
@@ -11,7 +12,7 @@ const Progress = ({ variant, label, withValue, maxValue, value }: TProgress) => 
                 <div className={styles.lineBar}>
                     <div className={styles.lineProgress} style={{ width }}></div>
                 </div>
-                {withValue && <div className={styles.progressValue}>50%</div>}
+                {withValue && <div className={styles.progressValue}>{valueInPercent}</div>}
             </div>
         </div>
     );
