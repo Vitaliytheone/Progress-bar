@@ -25,9 +25,17 @@ function App() {
 
     const onChangeValue = (e: any) => {
         const { value } = e.target;
-        // !str.match(/^-?[0-9]*[.][0-9]+$/)
-        setValue(value.replace(/^[0-9]*[.][0-9]+$/g, ""));
-        console.info(value);
+        // if(!value.match(/^-?[0-9]*[.][0-9]+$/)) {
+        //     setV
+        // }
+        const valid = /^\d*\.?(?:\d{1,2})?$/;
+        if (!valid.test(value)) {
+            setValue(0);
+        } else {
+            setValue(value);
+        }
+        // setValue(value.replace(/[1-9]*\d?(\.\d{1,2})?$/, ""));
+        // console.info(value);
     };
 
     return (
