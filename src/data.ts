@@ -10,3 +10,6 @@ export const data: Pick<TProgress, 'label' | 'variant'>[] = [
         //     label: 'Circle bar'
         // }
 ]
+
+export const validRegexp = /^\d*\.?(?:\d{1,2})?$/;
+ 

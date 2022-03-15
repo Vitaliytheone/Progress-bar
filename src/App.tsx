@@ -1,12 +1,12 @@
 import { Progress, Control } from "./components";
 import styles from "./assets/styles.module.css";
 import { useState } from "react";
-import { data } from "./data";
+import { data, validRegexp } from "./data";
 import { TBtn } from "./components/control/type";
 import useDebounce from "./hooks/useDebounceValue";
 
 function App() {
-    const [value, setValue] = useState(0);
+    const [curValue, setValue] = useState(0);
     const [maxValue, setMaxValue] = useState(10);
     const [withValue, setWithValue] = useState(false);
     const debouncedMaxValue = useDebounce({ value: maxValue });
@@ -24,18 +24,12 @@ function App() {
     };
 
     const onChangeValue = (e: any) => {
-        const { value } = e.target;
-        // if(!value.match(/^-?[0-9]*[.][0-9]+$/)) {
-        //     setV
-        // }
-        const valid = /^\d*\.?(?:\d{1,2})?$/;
-        if (!valid.test(value)) {
-            setValue(0);
+        let { value } = e.target;
+        if (!validRegexp.test(value)) {
+            value = "";
         } else {
             setValue(value);
         }
-        // setValue(value.replace(/[1-9]*\d?(\.\d{1,2})?$/, ""));
-        // console.info(value);
     };
 
     return (
@@ -50,7 +44,7 @@ function App() {
                             variant={variant}
                             label={label}
                             maxValue={maxValue}
-                            value={value}
+                            value={curValue}
                             withValue={withValue}
                         />
                     );
