@@ -1,27 +1,26 @@
 import styles from "./styles.module.css";
-import { TControl } from "./type";
+import { TBtn, TControl, TFields } from "./type";
+import { inputsData, buttonsData } from "./data";
 
-const Control = ({ value, maxValue, withValue, onChangeCheckbox, onChange, onClick }: TControl) => {
+const Control = ({ curValue, maxValue, withValue, onChangeCheckbox, onChange, onClick }: TControl) => {
     return (
         <div>
-            <div className={styles.inputWrap}>
-                <label htmlFor="input-max" className={styles.labelInput}>
-                    Max value
-                </label>
-                <input id="input-max" className={styles.mr4} value={maxValue} onChange={onChange} />
-            </div>
-            <div className={styles.inputWrap}>
-                <label htmlFor="input-current" className={styles.labelInput}>
-                    Enter the value
-                </label>
-                <input id="input-current" className={styles.mr4} value={value} onChange={onChange} />
-            </div>
-            <button className={styles.button} onClick={onClick("decr")}>
-                -
-            </button>
-            <button className={styles.button} onClick={onClick("incr")}>
-                +
-            </button>
+            {inputsData({ curValue, maxValue }).map((item, idx) => {
+                const { id, label, value, type } = item;
+                return (
+                    <div key={idx} className={styles.inputWrap}>
+                        <label htmlFor={id} className={styles.labelInput}>
+                            {label}
+                        </label>
+                        <input id={id} className={styles.mr4} value={value} onChange={onChange(type as TFields)} />
+                    </div>
+                );
+            })}
+            {buttonsData.map((item, idx) => (
+                <button key={idx} className={styles.button} onClick={onClick(item.type as TBtn)}>
+                    {item.value}
+                </button>
+            ))}
             <input
                 id="checkbox"
                 type="checkbox"

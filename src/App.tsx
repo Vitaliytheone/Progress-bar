@@ -2,7 +2,7 @@ import { Progress, Control } from "./components";
 import styles from "./assets/styles.module.css";
 import { useState } from "react";
 import { data, validRegexp } from "./data";
-import { TBtn } from "./components/control/type";
+import { TBtn, TFields } from "./components/control/type";
 import useDebounce from "./hooks/useDebounceValue";
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
         }
     };
 
-    const onChangeValue = (e: any) => {
+    const onChangeValue = (t: TFields) => (e: any) => {
         let { value } = e.target;
         if (!validRegexp.test(value)) {
             value = "";
@@ -51,7 +51,7 @@ function App() {
                 })}
             </div>
             <Control
-                value={value}
+                curValue={curValue}
                 maxValue={debouncedMaxValue}
                 withValue={withValue}
                 onClick={onClickBtn}
