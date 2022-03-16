@@ -17,18 +17,19 @@ function App() {
 
     const onClickBtn = (v: TBtn) => () => {
         if (v === "incr") {
-            setValue((prev) => (prev !== maxValue ? prev + 1 : maxValue));
+            setValue((prev) => (prev !== maxValue ? Number(prev) + 1 : maxValue));
         } else {
             setValue((prev) => prev && prev - 1);
         }
     };
 
     const onChangeValue = (t: TFields) => (e: any) => {
+        console.info(t);
         let { value } = e.target;
         if (!validRegexp.test(value)) {
             value = "";
         } else {
-            setValue(value);
+            t === "cur" ? setValue(value) : setMaxValue(value);
         }
     };
 
@@ -43,7 +44,7 @@ function App() {
                             key={idx}
                             variant={variant}
                             label={label}
-                            maxValue={maxValue}
+                            maxValue={debouncedMaxValue}
                             value={curValue}
                             withValue={withValue}
                         />
@@ -52,7 +53,7 @@ function App() {
             </div>
             <Control
                 curValue={curValue}
-                maxValue={debouncedMaxValue}
+                maxValue={maxValue}
                 withValue={withValue}
                 onClick={onClickBtn}
                 onChangeCheckbox={onChangeWithValueParam}

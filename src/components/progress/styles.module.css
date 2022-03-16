@@ -27,7 +27,7 @@
 
 .progressInfoValueLine {
     composes: progressInfo;
-    padding-right: 40px;
+    padding-right: 50px;
 }
 
 .progressValue {
