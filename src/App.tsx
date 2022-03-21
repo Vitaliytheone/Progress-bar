@@ -33,6 +33,8 @@ function App() {
         }
     };
 
+    console.info(maxValue);
+
     return (
         <>
             <div className={styles.title}>Progress bars</div>

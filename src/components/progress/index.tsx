@@ -6,6 +6,7 @@ const Progress = ({ variant, label, withValue, maxValue, value }: TProgress) => 
     const valueInPercent = `${((value * 100) / maxValue).toFixed(0)}%`;
     const width = value <= maxValue ? valueInPercent : maxValue;
     console.info(valueInPercent);
+    console.info(maxValue);
     console.info(width);
 
     return (
