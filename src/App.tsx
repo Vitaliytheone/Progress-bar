@@ -7,7 +7,7 @@ import useDebounce from "./hooks/useDebounceValue";
 
 function App() {
     const [curValue, setValue] = useState(0);
-    const [maxValue, setMaxValue] = useState(10);
+    const [maxValue, setMaxValue] = useState(100);
     const [withValue, setWithValue] = useState(false);
     const debouncedMaxValue = useDebounce({ value: maxValue });
 
@@ -24,16 +24,25 @@ function App() {
     };
 
     const onChangeValue = (t: TFields) => (e: any) => {
-        console.info(t);
         let { value } = e.target;
         if (!validRegexp.test(value)) {
             value = "";
         } else {
-            t === "cur" ? setValue(value) : setMaxValue(value);
+            switch (t) {
+                case "cur":
+                    if (value <= maxValue) {
+                        setValue(value);
+                    }
+                    break;
+                case "max":
+                    setMaxValue(value);
+                    setValue(0);
+                    break;
+                default:
+                    break;
+            }
         }
     };
-
-    console.info(maxValue);
 
     return (
         <>

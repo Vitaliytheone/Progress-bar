@@ -1,7 +1,7 @@
 export type TProgress = {
     variant: 'line' | 'circle';
-    maxValue: number;
-    value: number;
+    maxValue: number | string;
+    value: number | string;
     label?: string;
     withValue?: boolean;
 }
