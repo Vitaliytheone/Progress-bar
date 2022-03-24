@@ -30,7 +30,7 @@ function App() {
         } else {
             switch (t) {
                 case "cur":
-                    if (value <= maxValue) {
+                    if (Number(value) <= Number(maxValue)) {
                         setValue(value);
                     }
                     break;
@@ -55,8 +55,8 @@ function App() {
                             key={idx}
                             variant={variant}
                             label={label}
-                            maxValue={debouncedMaxValue}
-                            value={curValue}
+                            maxValue={Number(debouncedMaxValue)}
+                            value={Number(curValue)}
                             withValue={withValue}
                         />
                     );
