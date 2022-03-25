@@ -5,3 +5,5 @@ export type TProgress = {
     label?: string;
     withValue?: boolean;
 }
+
+export type TBar = Pick<TProgress, 'withValue'> & { valueInPercent: string, }

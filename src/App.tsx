@@ -7,7 +7,7 @@ import useDebounce from "./hooks/useDebounceValue";
 
 function App() {
     const [curValue, setValue] = useState(0);
-    const [maxValue, setMaxValue] = useState(100);
+    const [maxValue, setMaxValue] = useState(10);
     const [withValue, setWithValue] = useState(false);
     const debouncedMaxValue = useDebounce({ value: maxValue });
 
