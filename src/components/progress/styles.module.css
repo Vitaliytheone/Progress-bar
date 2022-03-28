@@ -19,6 +19,20 @@
     transition: width 0.3s linear;
 }
 
+.circleProgress {
+    position: relative;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    border: 10px solid #5f9ea047;
+}
+
+.circleSvg {
+    position: absolute;
+    left: -10px;
+    top: -10px;
+}
+
 .progressInfo {
     display: flex;
     align-items: center;
