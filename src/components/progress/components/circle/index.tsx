@@ -10,8 +10,8 @@ const CircleBar = ({ valueInPercent, withValue }: any) => {
                     stroke="white"
                     fill="transparent"
                     r="30"
-                    cx="50"
-                    cy="50"
+                    cx="60"
+                    cy="60"
                 />
             </svg>
         </div>
