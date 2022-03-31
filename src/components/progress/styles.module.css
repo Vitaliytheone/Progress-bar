@@ -21,16 +21,21 @@
 
 .circleProgress {
     position: relative;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    border: 10px solid #5f9ea047;
+    /* border-radius: 50%;
+    border: 10px solid #5f9ea047; */
 }
 
 .circleSvg {
-    position: absolute;
+    /* position: absolute;
     left: -10px;
-    top: -10px;
+    top: -10px; */
+}
+
+.circleValuePercent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .progressInfo {
