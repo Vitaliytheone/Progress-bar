@@ -25,10 +25,10 @@
     border: 10px solid #5f9ea047; */
 }
 
-.circleSvg {
-    /* position: absolute;
-    left: -10px;
-    top: -10px; */
+.svgFigure {
+    transition: stroke-dashoffset 0.3s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
 }
 
 .circleValuePercent {

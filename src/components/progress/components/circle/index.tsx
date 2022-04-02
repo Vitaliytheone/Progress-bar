@@ -8,14 +8,16 @@ const CircleBar = ({ valueInPercent, withValue, stroke = 10, width = 110, height
         () => getCircleParams({ stroke, width, height }),
         [stroke, width, height],
     );
+    const offset = circumference - (parseFloat(valueInPercent) / 100) * circumference;
+
     return (
         <div className={styles.circleProgress} style={{ width: w, height: h }}>
-            <svg className={styles.circleSvg} height={h} width={w}>
+            <svg height={h} width={w}>
                 <circle
-                    className="progress-ring__circle"
+                    className={styles.svgFigure}
                     strokeWidth={stroke}
-                    strokeDasharray={`${circumference} ${circumference}`}
-                    style={{ strokeDashoffset: circumference }}
+                    strokeDasharray={`${circumference}`}
+                    style={{ strokeDashoffset: offset }}
                     stroke="#4daca3"
                     fill="transparent"
                     r={radius}
