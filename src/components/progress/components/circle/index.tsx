@@ -13,6 +13,7 @@ const CircleBar = ({ valueInPercent, withValue, stroke = 10, width = 110, height
     return (
         <div className={styles.circleProgress} style={{ width: w, height: h }}>
             <svg height={h} width={w}>
+                <circle r={radius} cx={cx} cy={cy} fill="none" stroke="#5f9ea047" strokeWidth={stroke} />
                 <circle
                     className={styles.svgFigure}
                     strokeWidth={stroke}
